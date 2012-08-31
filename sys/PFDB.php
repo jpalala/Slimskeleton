@@ -50,7 +50,8 @@ class PFDB {
         foreach($data as $key => $value)
         {
             $query .= sprintf('%s = ?', $key);
-            if($key != end(array_keys($data)))
+            $arrkeys = array_keys($data);
+            if($key != end($arrkeys))
             {
                 $query .= ' and ';
             }
@@ -91,7 +92,8 @@ class PFDB {
         {
             $query .= sprintf('%s = ?', $key);
             $newdata[$key] = $value;
-            if($key != end(array_keys($data)))
+            $arrkeys = array_keys($data);
+            if($key != end($arrkeys))
             {
                 $query .= ', ';
             }
@@ -101,7 +103,8 @@ class PFDB {
         {
             $query .=  sprintf('%s = ?', $w);
             $newdata[$w] = $v;
-            if($w != end(array_keys($where)))
+            $arrkeys = array_keys($where);
+            if($w != end($arrkeys))
             {
                 $query .= ' and ';
             }
