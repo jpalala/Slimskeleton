@@ -3,6 +3,7 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'slim');
 define('DB_PASS', 'slimtest');
 define('DB_NAME', 'slimtest');
+
 class PFDB {
     
     private $pdo;
